@@ -1,8 +1,7 @@
 import { Button } from "./ui/button"
 import { Menu, Phone, Mail } from "lucide-react"
 import { useState } from "react"
-import LionLogo from "./LionLogo"
-
+import lionWhite from "../assets/lion_white.png";
 interface HeaderProps {
   currentPage: string
   onNavigate: (page: string) => void
@@ -50,15 +49,13 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <button 
-            onClick={() => handleNavigate('home')}
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
-          >
-            <LionLogo className="h-10 w-10" />
-            <h1 className="text-2xl font-bold text-white">
-              The Property Company
-            </h1>
-          </button>
+          <button
+  onClick={() => handleNavigate('home')}
+  className="flex items-center gap-3 hover:opacity-80 transition-opacity"
+>
+  <img src={lionWhite} alt="The Property Company Logo" className="h-10 w-10" />
+  <h1 className="text-2xl font-bold text-white">The Property Company</h1>
+</button>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
